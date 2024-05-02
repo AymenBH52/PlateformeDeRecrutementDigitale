@@ -9,6 +9,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CvListComponent } from './components/cv-list/cv-list.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { SanitizePipe } from './pipes/sanitize.pipe';
+import { AdminSidebarComponent } from '../components/admin-sidebar/admin-sidebar.component';
+import { TopBarComponent } from '../components/top-bar/top-bar.component';
 @NgModule({
   declarations: [UploadCvComponent, CvListComponent, SanitizePipe],
   providers: [CvService],
@@ -19,6 +21,8 @@ import { SanitizePipe } from './pipes/sanitize.pipe';
     FontAwesomeModule,
     CvRoutingModule,
     PdfViewerModule,
+    // AdminSidebarComponent,
+    // TopBarComponent,
   ],
   exports: [UploadCvComponent],
 })

@@ -22,6 +22,7 @@ import { CommonModule } from '@angular/common';
 import { AddOffreComponent } from './components/offre/add-offre/add-offre.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AdminListOffreComponent } from './components/offre/admin-list-offre/admin-list-offre.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AdminListOffreComponent } from './components/offre/admin-list-offre/adm
     ListCategorieComponent,
     AddOffreComponent,
     AdminListOffreComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,7 @@ import { AdminListOffreComponent } from './components/offre/admin-list-offre/adm
     FontAwesomeModule,
     CvModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
