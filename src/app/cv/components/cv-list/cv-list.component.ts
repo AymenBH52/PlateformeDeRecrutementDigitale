@@ -19,6 +19,7 @@ export class CvListComponent implements OnInit {
   safeUrl: SafeResourceUrl | null = null;
   preview: boolean = false;
   data: any = [];
+  selectedCv: any = null;
   constructor(private cvService: CvService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
@@ -63,5 +64,17 @@ export class CvListComponent implements OnInit {
   showPreview(e: Event) {
     e.preventDefault();
     this.preview = !this.preview;
+  }
+
+  test(cv: any) {
+    console.log(cv);
+  }
+
+  setSelectedCv(cv: any, x: number) {
+    console.log(cv.nom);
+    this.selectedCv = {
+      cv,
+      index: x,
+    };
   }
 }

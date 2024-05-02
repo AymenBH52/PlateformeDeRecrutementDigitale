@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Capture</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgb(246, 248, 249);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centrer horizontalement */
+        }
+
+        video {
+            background-color: rgb(239, 216, 187);
+            width: 100%; /* Utiliser toute la largeur disponible */
+            max-width: 640px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            font-size: 14px; /* Réduire la taille de la police */
+            background-color: #073f7a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 8px 16px; /* Réduire les espacements */
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #155dae;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div  class="container">
+            <button type="button" (click)="activateWebcam()">Activer la webcam et le micro</button>
+        </div>
+        <div class="container" *ngIf="webcamActivated">
+            <button type="button" (click)="startRecording()">Lancer l'enregistrement</button>
+        </div>
+        <video #video width="640" height="480"  autoplay></video> 
+    </div>
+</body>
+</html>

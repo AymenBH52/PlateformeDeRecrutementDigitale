@@ -8,8 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CvListComponent } from './components/cv-list/cv-list.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { SanitizePipe } from './pipes/sanitize.pipe';
 @NgModule({
-  declarations: [UploadCvComponent, CvListComponent],
+  declarations: [UploadCvComponent, CvListComponent, SanitizePipe],
   providers: [CvService],
   imports: [
     CommonModule,

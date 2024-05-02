@@ -1,5 +1,15 @@
 <div class="container row">
-  <div class="col-md-6" *ngFor="let cv of listCV">
+  <div class="input-group">
+    <label class="input-group-text" for=""><i class="bi bi-funnel"></i></label>
+    <select class="form-select" aria-label="Filter select">
+      <option selected><i class="bi bi-funnel"></i> Filter</option>
+      <option value="1">All</option>
+      <option value="2">Active</option>
+      <option value="3">Inactive</option>
+    </select>
+  </div>
+
+  <div class="col-md-6" *ngFor="let cv of listCV; let x = index">
     <div class="card">
       <div class="container-card bg-green-box">
         <p class="card-title">{{ cv.nom }}</p>
@@ -36,6 +46,7 @@
           class="btn btn-info"
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
+          (click)="setSelectedCv(cv, x)"
         >
           Preview
         </button>
@@ -51,11 +62,10 @@
           aria-hidden="true"
         >
           <div class="modal-dialog modal-xl">
-            <!-- Add modal-lg class for large modal -->
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">
-                  {{ cv.nom }}
+                  {{ selectedCv && selectedCv.cv.nom }}
                 </h5>
                 <button
                   type="button"
@@ -65,14 +75,12 @@
                 ></button>
               </div>
               <div class="modal-body" style="height: 76vh">
-                <!-- Adjust height as needed -->
                 <iframe
-                  [src]="cv.safeUrl"
+                  [src]="selectedCv && selectedCv.cv.safeUrl"
                   width="100%"
                   height="100%"
                   style="border: none"
                 ></iframe>
-                <!-- Set iframe height to 100% -->
               </div>
               <div class="modal-footer">
                 <button
