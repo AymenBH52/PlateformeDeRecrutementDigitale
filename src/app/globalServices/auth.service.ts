@@ -3,7 +3,7 @@ import { API_BASE_URL, BASE_URL } from '../cv/myConfigs';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
-import { Observable, map } from 'rxjs';
+import { Observable, Subject, map } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';
 @Injectable({
   providedIn: 'root',
@@ -37,7 +37,7 @@ export class AuthService {
           if (token) {
             this.localStorageService.addItem('token', token);
             this.localStorageService.addObject('user', user);
-            this.router.navigate(['/dashboard']);
+            window.location.href = '/dashboard';
           } else {
             console.error('No token found in response headers');
           }
@@ -46,9 +46,12 @@ export class AuthService {
       );
   }
 
-  register(user: User) {
-    return this.http.post(API_BASE_URL + '/register', {
-      username: user.email,
+  register(user: any): Observable<any> {
+    console.log(user);
+
+    return this.http.post(BASE_URL + '/signup', {
+      name: user.name,
+      email: user.email,
       password: user.password,
     });
   }
@@ -61,5 +64,15 @@ export class AuthService {
   logout() {
     this.localStorageService.removeManyItems(['token', 'user']);
     this.router.navigate(['/']);
+  }
+
+  private triggerSubject = new Subject<string>();
+
+  get onTrigger(): Observable<string> {
+    return this.triggerSubject.asObservable();
+  }
+
+  requestConfirmation(message: string) {
+    this.triggerSubject.next(message);
   }
 }

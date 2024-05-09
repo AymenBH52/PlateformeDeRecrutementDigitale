@@ -7,13 +7,13 @@
   @media screen and (min-width: 992px) and (max-width: 1439px) {
     max-width: 1279px !important;
     padding: 0 !important;
-    margin: 0 80px !important;
+    // margin: 0 80px !important;
     width: auto !important;
   }
 
   @media screen and (max-width: 991px) {
     max-width: 959px !important;
-    margin: 0 16px !important;
+    // margin: 0 16px !important;
     padding: 0 !important;
     width: auto !important;
   }
@@ -100,19 +100,11 @@
   padding-bottom: 10px;
 }
 .card-subtitle {
-  font-weight: 600;
-  color: hsla(0, 0%, 87%, 0.8);
-  font-size: 12px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-.card-spec {
   font-weight: 200;
   color: hsla(0, 0%, 87%, 0.8);
   font-size: 12px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
-
 .card-description {
   font-weight: 600;
   line-height: 12px;

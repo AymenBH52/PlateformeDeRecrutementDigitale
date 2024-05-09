@@ -1,37 +1,27 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { CvService } from '../../services/cv.service';
-import { CvModel } from 'src/app/models/cv.model';
-import {
-  DomSanitizer,
-  SafeResourceUrl,
-  SafeUrl,
-} from '@angular/platform-browser';
+import { Component } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Observable, map } from 'rxjs';
+import { CvModel } from 'src/app/models/cv.model';
 import { availableIcons } from '../../myConfigs';
-import { AuthService } from 'src/app/globalServices/auth.service';
+import { CvService } from '../../services/cv.service';
+
 @Component({
-  selector: 'app-cv-list',
-  templateUrl: './cv-list.component.html',
-  styleUrls: ['./cv-list.component.scss'],
+  selector: 'app-list-cv-refuse',
+  templateUrl: './list-cv-refuse.component.html',
+  styleUrls: ['./list-cv-refuse.component.scss'],
 })
-export class CvListComponent implements OnInit {
+export class ListCvRefuseComponent {
   listCV: CvModel[] = [];
   retrievedFile: Window | null = null;
   safeUrl: SafeResourceUrl | null = null;
   preview: boolean = false;
   data: any = [];
   selectedCv: any = null;
-
+  constructor(private cvService: CvService, private sanitizer: DomSanitizer) {}
   filteredCvs: any[] = [];
   specialties: Set<String> = new Set();
   offres: any[] = [];
-
   showModal = false;
-  modalMessage = '';
-
-  constructor(private cvService: CvService, private sanitizer: DomSanitizer) {}
-
-  closeModal(t: boolean) {}
   ngOnInit(): void {
     this.getAllCvs();
     this.filteredCvs = this.listCV;
@@ -90,10 +80,11 @@ export class CvListComponent implements OnInit {
   getAllCvs() {
     this.cvService.getAllCVs().subscribe((res: CvModel[]) => {
       res.forEach((element) => {
-        if (element.acceptedBySystem == true && element.archived == false) {
+        if (element.acceptedBySystem == false && element.archived == false) {
           this.getPdfUrl(element.id).subscribe(
             (safeUrl: SafeResourceUrl | undefined) => {
               element.safeUrl = safeUrl;
+
               this.listCV.push(element);
               element.specialite && this.specialties.add(element.specialite);
               element.offre && this.offres.push(element.offre.nom);

@@ -1,20 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { CvService } from '../../services/cv.service';
-import { CvModel } from 'src/app/models/cv.model';
-import {
-  DomSanitizer,
-  SafeResourceUrl,
-  SafeUrl,
-} from '@angular/platform-browser';
+import { Component } from '@angular/core';
+
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Observable, map } from 'rxjs';
+import { CvModel } from 'src/app/models/cv.model';
+import { CvService } from '../../services/cv.service';
 import { availableIcons } from '../../myConfigs';
-import { AuthService } from 'src/app/globalServices/auth.service';
 @Component({
-  selector: 'app-cv-list',
-  templateUrl: './cv-list.component.html',
-  styleUrls: ['./cv-list.component.scss'],
+  selector: 'app-cv-list-archive',
+  templateUrl: './cv-list-archive.component.html',
+  styleUrls: ['./cv-list-archive.component.scss'],
 })
-export class CvListComponent implements OnInit {
+export class CvListArchiveComponent {
   listCV: CvModel[] = [];
   retrievedFile: Window | null = null;
   safeUrl: SafeResourceUrl | null = null;
@@ -90,7 +86,7 @@ export class CvListComponent implements OnInit {
   getAllCvs() {
     this.cvService.getAllCVs().subscribe((res: CvModel[]) => {
       res.forEach((element) => {
-        if (element.acceptedBySystem == true && element.archived == false) {
+        if (element.archived) {
           this.getPdfUrl(element.id).subscribe(
             (safeUrl: SafeResourceUrl | undefined) => {
               element.safeUrl = safeUrl;
@@ -168,7 +164,7 @@ export class CvListComponent implements OnInit {
   }
 
   confirmDelete(status: boolean) {
-    this.cvService.deleteAllCVsByStatus(status).subscribe((res: string) => {
+    this.cvService.deleteAllArchivedCvs().subscribe((res: string) => {
       console.log(res);
       this.showModal = false;
       this.listCV = [];
@@ -176,7 +172,6 @@ export class CvListComponent implements OnInit {
       this.specialties = new Set();
     });
   }
-
   deleteCV(id: any) {
     console.log('Deleting CV with ID:', id);
     this.cvService.deleteCV(id).subscribe({

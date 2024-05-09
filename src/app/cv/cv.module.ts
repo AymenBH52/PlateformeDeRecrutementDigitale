@@ -9,10 +9,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CvListComponent } from './components/cv-list/cv-list.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { SanitizePipe } from './pipes/sanitize.pipe';
-import { AdminSidebarComponent } from '../components/admin-sidebar/admin-sidebar.component';
-import { TopBarComponent } from '../components/top-bar/top-bar.component';
+import { AdminSidebarComponent } from '../shared/admin-sidebar/admin-sidebar.component';
+import { TopBarComponent } from '../shared/top-bar/top-bar.component';
+import { SharedModule } from '../shared/shared.module';
+import { ListCvRefuseComponent } from './components/list-cv-refuse/list-cv-refuse.component';
+import { CvListArchiveComponent } from './components/cv-list-archive/cv-list-archive.component';
+
 @NgModule({
-  declarations: [UploadCvComponent, CvListComponent, SanitizePipe],
+  declarations: [UploadCvComponent, CvListComponent, SanitizePipe, ListCvRefuseComponent, CvListArchiveComponent],
   providers: [CvService],
   imports: [
     CommonModule,
@@ -23,6 +27,7 @@ import { TopBarComponent } from '../components/top-bar/top-bar.component';
     PdfViewerModule,
     // AdminSidebarComponent,
     // TopBarComponent,
+    SharedModule,
   ],
   exports: [UploadCvComponent],
 })
