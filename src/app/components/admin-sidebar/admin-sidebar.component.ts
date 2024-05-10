@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AdminSidebarComponent {
 
+  isTestsMenuOpen = false;
+  isCategoriesMenuOpen = false;
+  isQuizzesMenuOpen = false;
+
+  toggleMenu(menuType: string) {
+    switch (menuType) {
+      case 'tests':
+        this.isTestsMenuOpen = !this.isTestsMenuOpen;
+        break;
+      case 'categories':
+        this.isCategoriesMenuOpen = !this.isCategoriesMenuOpen;
+        break;
+      case 'quizzes':
+        this.isQuizzesMenuOpen = !this.isQuizzesMenuOpen;
+        break;
+    }
+  }
+
 }
