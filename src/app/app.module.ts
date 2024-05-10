@@ -41,10 +41,9 @@ import { AddOffreComponent } from './components/offre/add-offre/add-offre.compon
 import { AdminListOffreComponent } from './components/offre/admin-list-offre/admin-list-offre.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashbordUsersComponent } from './components/dashbord-users/dashbord-users.component';
 import { SideBarUsersComponent } from './components/side-bar-users/side-bar-users.component';
-
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -69,9 +68,9 @@ import { SideBarUsersComponent } from './components/side-bar-users/side-bar-user
     TopBarComponent,
     ListCategorieComponent,AddOffreComponent,AdminListOffreComponent,
     HomeComponent,
-    NavbarComponent,
     DashbordUsersComponent,
     SideBarUsersComponent,
+    NavbarComponent
     
     
     
@@ -96,9 +95,10 @@ import { SideBarUsersComponent } from './components/side-bar-users/side-bar-user
     MatSlideToggleModule,
     MatSelectModule,
     CKEditorModule,
-
-
-    CommonModule,FormsModule,HttpClientModule,ReactiveFormsModule
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
    
   ],
   providers: [],
