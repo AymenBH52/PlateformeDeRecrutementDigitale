@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './exam-interface/components/navbar/navbar.component';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { DashboardAdminComponent } from './exam-interface/components/dashboard-admin/dashboard-admin.component';
@@ -18,7 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field'; // Importer MatFormFieldModule
 import { MatInputModule } from '@angular/material/input'; 
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms'; 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ViewQuizzesComponent } from './exam-interface/components/view-quizzes/view-quizzes.component';
 import { AddQuizComponent } from './exam-interface/components/add-quiz/add-quiz.component';
@@ -31,11 +29,28 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { DashboardUserComponent } from './exam-interface/components/User/dashboard-user/dashboard-user.component';
 import {SidebarComponent as UserSidebar} from './exam-interface/components/User/sidebar/sidebar.component';
 import { LoadQuizComponent } from './exam-interface/components/User/load-quiz/load-quiz.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+
+import { AddCategorieComponent } from './components/categorie/add-categorie/add-categorie.component';
+import { FormControlDirective, FormGroup, FormGroupDirective, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { ListCategorieComponent } from './components/categorie/list-categorie/list-categorie.component';
+import { CommonModule } from '@angular/common';
+import { AddOffreComponent } from './components/offre/add-offre/add-offre.component';
+import { AdminListOffreComponent } from './components/offre/admin-list-offre/admin-list-offre.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { DashbordUsersComponent } from './components/dashbord-users/dashbord-users.component';
+import { SideBarUsersComponent } from './components/side-bar-users/side-bar-users.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    
     DashboardAdminComponent,
     SideBarComponent,
     ProfileComponent,
@@ -50,7 +65,21 @@ import { LoadQuizComponent } from './exam-interface/components/User/load-quiz/lo
     UserSidebar,
     LoadQuizComponent, 
 
+    //Mouna
+    DashboardComponent,
+    AddCategorieComponent,
+    AdminSidebarComponent,
+    TopBarComponent,
+    ListCategorieComponent,AddOffreComponent,AdminListOffreComponent,
+    HomeComponent,
+    NavbarComponent,
+    DashbordUsersComponent,
+    SideBarUsersComponent,
     
+    
+    
+    
+   
     
   ],
   imports: [
@@ -69,9 +98,11 @@ import { LoadQuizComponent } from './exam-interface/components/User/load-quiz/lo
     MatSnackBarModule,
     MatSlideToggleModule,
     MatSelectModule,
-    CKEditorModule
+    CKEditorModule,
 
 
+    CommonModule,FormsModule,HttpClientModule,ReactiveFormsModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
