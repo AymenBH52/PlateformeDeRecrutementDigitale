@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { API_BASE_URL, BASE_URL } from '../cv/myConfigs';
+import { API_BASE_URL, BASE_URL } from '../cvs/myConfigs';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';

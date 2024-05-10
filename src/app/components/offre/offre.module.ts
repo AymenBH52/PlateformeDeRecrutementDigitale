@@ -4,7 +4,10 @@ import { AddOffreComponent } from './add-offre/add-offre.component';
 import { AdminListOffreComponent } from './admin-list-offre/admin-list-offre.component';
 import { CondidatListOffreComponent } from './condidat-list-offre/condidat-list-offre.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { UpdateOffreComponent } from './update-offre/update-offre.component';
+import { OffreDetailsComponent } from './offre-details/offre-details.component';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -12,10 +15,13 @@ import { HttpClient } from '@angular/common/http';
   declarations: [
     AddOffreComponent,
     AdminListOffreComponent,
-    CondidatListOffreComponent
+    CondidatListOffreComponent,
+    UpdateOffreComponent,
+    OffreDetailsComponent,
+    NavbarComponent
   ],
   imports: [
-    CommonModule,FormsModule ,HttpClient
+    CommonModule,FormsModule ,HttpClientModule
   ]
 })
 export class OffreModule { }

@@ -20,6 +20,16 @@ export class AdminListOffreComponent implements OnInit{
  this.offres=data;
     })
    }
+   deleteOffre(id:number){
+    this.offreService.deleteOffre(id).subscribe((res)=>
+      {
+        console.log(res);
+      }
+    )
+   }
+   gotToEditOffre(x: any) {
+    this.router.navigate([`update-offre/${x}`]);
+  }
   }
 
 

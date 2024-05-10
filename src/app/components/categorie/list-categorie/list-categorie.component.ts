@@ -23,4 +23,11 @@ export class ListCategorieComponent implements OnInit {
       this.router.navigate(['/list-categorie']);
     });
   }
+  deleteCategorie(id:number){
+    this.categorieService.deleteCategorie(id).subscribe((data)=>{
+      console.log(data)
+    }
+    )
+  }
+
 }

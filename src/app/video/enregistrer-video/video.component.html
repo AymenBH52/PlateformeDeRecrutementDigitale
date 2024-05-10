@@ -11,10 +11,9 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #f8f8f8;
             font-family: Arial, sans-serif;
         }
-
         .container {
             text-align: center;
             background-color: rgb(246, 248, 249);
@@ -23,43 +22,60 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centrer horizontalement */
+            align-items: center;
         }
-
+      
+        .videoContainer {
+            text-align: center;
+            background-color: rgb(246, 248, 249);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         video {
-            background-color: rgb(239, 216, 187);
-            width: 100%; /* Utiliser toute la largeur disponible */
+            background-color: rgb(247, 204, 151);
+            width: 100%;
             max-width: 640px;
             border-radius: 8px;
             margin-top: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         button {
-            font-size: 14px; /* Réduire la taille de la police */
+            font-size: 14px;
             background-color: #073f7a;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            padding: 8px 16px; /* Réduire les espacements */
+            padding: 8px 16px;
             transition: background-color 0.3s ease;
+            margin: 10px;
         }
-
         button:hover {
             background-color: #155dae;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <div  class="container">
-            <button type="button" (click)="activateWebcam()">Activer la webcam et le micro</button>
-        </div>
-        <div class="container" *ngIf="webcamActivated">
-            <button type="button" (click)="startRecording()">Lancer l'enregistrement</button>
-        </div>
-        <video #video width="640" height="480"  autoplay></video> 
-    </div>
+        <div class="container" style="background-color: rgba(255, 233, 186, 0.377); width: 1000px; height: 100px;">
+        <button *ngIf="!cameraActivated" (click)="activateCameraAndMicrophone()">Activate Camera and Microphone</button>
+        
+        <div class="button" *ngIf="cameraActivated">
+            <button *ngIf="!recordStarted" (click)="startRecording()">Start Recording</button>
+            <button *ngIf="recordStarted" (click)="stopRecording()">Stop Recording</button>
+        </div></div>
+        <video #videoElement width="640" height="480" autoplay muted></video>
+       
+ </div>
+    <div>
+ 
+</div>
 </body>
+
 </html>
