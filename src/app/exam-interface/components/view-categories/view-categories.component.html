@@ -1,0 +1,44 @@
+<!-- <mat-card>
+
+    <mat-list>
+        <div mat-subheader>All Categories</div>
+        <mat-list-item *ngFor="let c of categories">
+
+            <mat-icon mat-list-icon>category</mat-icon>
+            <div mat-line>{{c.title}}</div>
+            <div mat-line>{{c.description}}</div>
+            <mat-divider></mat-divider>
+
+        </mat-list-item>
+    </mat-list>
+
+</mat-card> -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">All Categories</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let c of categories">
+                        <i class="bi bi-category"></i>
+                        <h5 class="card-title">{{c.title}}</h5>
+                        <p class="card-text">{{c.description}}</p>
+                    </li>
+                </ul>
+
+                <div class="container text-center mt20">
+                    <button routerLink="/dashboarAdmin/add-category" class="btn btn-primary">Add New Category</button>
+                    
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
