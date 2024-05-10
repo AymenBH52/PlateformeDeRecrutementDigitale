@@ -1,12 +1,27 @@
-<div *ngIf="offre">
-    <h2>Détails de l'offre</h2>
-    <div>
-      <p><strong>Nom:</strong> {{ offre.nom }}</p>
-      <p><strong>Sujet:</strong> {{ offre.sujet }}</p>
-      <p><strong>Description:</strong> {{ offre.description }}</p>
-      <p><strong>Date de création:</strong> {{ offre.dateCreation }}</p>
-      <p><strong>Compétences:</strong> {{ offre.competences }}</p>
-      <p><strong>Type de contrat:</strong> {{ offre.typeContrat }}</p>
-   
+<app-navbar></app-navbar>
+  <section id="pricing" class="pricing sections-bg">
+    <div class="container" data-aos="fade-up">
+  <div class="row g-4 py-lg-5" data-aos="zoom-out" data-aos-delay="100">
+  <div class="col-lg-8" *ngIf="offre" style="margin-left: 300px; margin-top: 20px;">
+    <div class="pricing-item">
+        <div class="icon">
+            <i class="bi bi-box"></i>
+          </div>
+      <h3>{{offre.nom }}</h3>
+     
+      <ul>
+        <li><i class="bi bi-check"></i>{{ offre.sujet }}</li>
+        <li><i class="bi bi-check"></i>{{ offre.description }}</li>
+       
+        <li><i class="bi bi-check"></i> <span> {{ offre.competences }}</span></li>
+        <li><i class="bi bi-check"></i> <span> {{ offre.dateCreation }}</span></li>
+        <li><i class="bi bi-check"></i> <span> {{offre.typeContrat }}</span></li>
+      </ul>
+      <div class="text-center"><a href="#" class="buy-btn">Postuler</a></div>
+      <a href="/condidat-list-offre">
+        <img src="assets\img\icons8-arrière-50.png" style="margin-left: 20px; margin-top: 30px;" alt="Back">
+    </a>
     </div>
   </div>
+</div>
+    </div></section>
