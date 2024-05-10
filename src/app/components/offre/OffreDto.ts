@@ -6,5 +6,5 @@ export interface OffreDto {
     competences: string;
     typeContrat: string;
     categorieId: number; 
-    
+    questions:{};
   }

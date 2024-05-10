@@ -31,7 +31,7 @@
           <div class="section-title" style="margin-bottom: 30px;">
             <h4>Ajouter une offre</h4>
           </div>
-          <form [formGroup]="offreform" (ngSubmit)="addOffre()">
+          <form [formGroup]="updateoffreform" (ngSubmit)="editOffre()" >
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="categorieId">Catégorie</label>
@@ -73,9 +73,9 @@
           <div class="section-title" style="margin-bottom: 20px;">
            <h5>Ajouter question</h5>
           </div>
-          <form [formGroup]="offreform" (ngSubmit)="ajoutQuestion()" >
+          <form [formGroup]="updateoffreform" >
             <div formArrayName="questions">
-              <div *ngFor="let question of offreform.get('questions').controls; let j = index" [formGroupName]="j">
+              <div *ngFor="let question of updateoffreform.get('questions').controls; let j = index" [formGroupName]="j">
                 <div class="row">
                   <div class="col-sm-6">
                     <label for="libelle">question:</label>
@@ -98,4 +98,5 @@
       </div>
       </main>
     </div>
+
 

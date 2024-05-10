@@ -47,8 +47,8 @@
             <td>{{o.description}}</td> 
             <td>{{o.competences}}</td> 
             <td>{{o.typeContrat}}</td>
-            <td><img src="assets\img\icons8-trash-20.png" style="margin-right: 10px;">
-            <img src="assets\img\icons8-modifier-la-propriété-20.png"></td> 
+            <td><img src="assets\img2\icons8-trash-20.png" (click)="deleteOffre(o.id)" style="margin-right: 10px;">
+            <img src="assets\img2\icons8-modifier-la-propriété-20.png"  (click)="gotToEditOffre(o.id)"></td> 
         </tr>
     </tbody>
 </table>
