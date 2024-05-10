@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { OffreService } from '../offre.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CategorieService } from '../../categorie/categorie.service';
 import { OffreDto } from '../OffreDto';
+import { CategorieService } from '../../categorie/categorie.service';
 
 @Component({
   selector: 'app-add-offre',
@@ -11,44 +11,55 @@ import { OffreDto } from '../OffreDto';
   styleUrls: ['./add-offre.component.scss']
 })
 export class AddOffreComponent implements OnInit {
-  categories: any = {};
   offreform: any;
+categories:any={}
+  constructor(private formBuilder: FormBuilder,private categorieService:CategorieService, private offreService: OffreService, private router: Router) {}
 
-  
-  constructor(private offreService: OffreService, private categorieService: CategorieService, private router: Router, private formBuilder: FormBuilder) {}
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.getAllCategories();
-    this.offreform = this.formBuilder.group({ 
+    this.offreform = this.formBuilder.group({
+      categorieId: ['', Validators.required],
       nom: ['', Validators.required],
       sujet: ['', Validators.required],
       description: ['', Validators.required],
       competences: ['', Validators.required],
       typeContrat: ['', Validators.required],
-      categorieId: ['', Validators.required]
+      questions: this.formBuilder.array([
+        this.initQuestionFields()
+      ])
+    });
+  }
+  getAllCategories(){
+    this.categorieService.getCategories().subscribe((data)=>{
+      this.categories=data;
+    }
+
+    )
+  }
+  initQuestionFields(): FormGroup {
+    return this.formBuilder.group({
+      libelle: ['', Validators.required],
+      duree: ['', Validators.required]
     });
   }
 
-  getAllCategories() {
-    this.categorieService.getCategories().subscribe(
-      (data) => {
-        this.categories = data;
-      }
-    );
+  ajoutQuestion(): void {
+    const control = this.offreform.get('questions') as FormArray;
+    control.push(this.initQuestionFields());
   }
-
   addOffre() {
     if (this.offreform.valid) { 
-      
+      console.log(this.offreform)
       const offreDto: OffreDto={ 
         nom: this.offreform.get('nom').value,
         sujet: this.offreform.get('sujet').value,
         description: this.offreform.get('description').value,
         competences: this.offreform.get('competences').value,
         typeContrat: this.offreform.get('typeContrat').value,
-        categorieId: this.offreform.get('categorieId').value
+        categorieId: this.offreform.get('categorieId').value,
+        questions :this.offreform.get('questions').value
       };
-  
+     
       const categorieId = this.offreform.get('categorieId').value;
       
       this.offreService.addOffre(offreDto, categorieId).subscribe(

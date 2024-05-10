@@ -15,4 +15,8 @@ export class CategorieService {
   getCategories(){
     return this.http.get(this.baseUrl);
   }
-}
+  deleteCategorie(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`);
+  }
+  
+  }
