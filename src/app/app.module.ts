@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { DashboardAdminComponent } from './exam-interface/components/dashboard-admin/dashboard-admin.component';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import { SideBarComponent } from './exam-interface/components/side-bar/side-bar.component';
@@ -50,8 +49,6 @@ import { SideBarUsersComponent } from './components/side-bar-users/side-bar-user
 @NgModule({
   declarations: [
     AppComponent,
-    
-    DashboardAdminComponent,
     SideBarComponent,
     ProfileComponent,
     ViewCategoriesComponent,

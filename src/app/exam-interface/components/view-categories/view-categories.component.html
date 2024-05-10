@@ -1,44 +1,65 @@
-<!-- <mat-card>
+<!DOCTYPE html>
+<html lang="en">
 
-    <mat-list>
-        <div mat-subheader>All Categories</div>
-        <mat-list-item *ngFor="let c of categories">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant Dashboard | Dashboard</title>
+  <!-- Favicon -->
+ 
+</head>
 
-            <mat-icon mat-list-icon>category</mat-icon>
-            <div mat-line>{{c.title}}</div>
-            <div mat-line>{{c.description}}</div>
-            <mat-divider></mat-divider>
+<body>
+  <div class="layer"></div>
+<!-- ! Body -->
+<a class="skip-link sr-only" href="#skip-target">Skip to content</a>
+<div class="page-flex">
+<app-admin-sidebar></app-admin-sidebar>
 
-        </mat-list-item>
-    </mat-list>
+<div class="main-wrapper">
+          <app-top-bar></app-top-bar>
+          <main class="main users chart-page" id="skip-target">
 
-</mat-card> -->
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">All Categories</div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item" *ngFor="let c of categories">
-                        <i class="bi bi-category"></i>
-                        <h5 class="card-title">{{c.title}}</h5>
-                        <p class="card-text">{{c.description}}</p>
-                    </li>
-                </ul>
-
-                <div class="container text-center mt20">
-                    <button routerLink="/dashboarAdmin/add-category" class="btn btn-primary">Add New Category</button>
-                    
+            <div class="container" >
+                <div class="section-title">
+                  <h4>Liste des categories</h4>
                 </div>
-                    
-            </div>
-        </div>
-    </div>
+                <br>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">All Categories</div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" *ngFor="let c of categories">
+                                        <i class="bi bi-category"></i>
+                                        <h5 class="card-title">{{c.title}}</h5>
+                                        <p class="card-text">{{c.description}}</p>
+                                    </li>
+                                </ul>
+                
+                                <div class="container text-center mt20">
+                                    <button routerLink="/dashboarAdmin/add-category" class="btn btn-primary">Add New Category</button>
+                                    
+                                </div>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+              </div>
+              
+</main>
 </div>
-
-
-
+</div></body></html>
 
 

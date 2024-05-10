@@ -2858,12 +2858,12 @@ label {
 }
 
 .top-cat-list__subtitle .purple {
-  color: #dddae7;
+  color: #5f2eea;
   background-color: rgba(116, 51, 255, 0.1);
 }
 
 .top-cat-list__subtitle .blue {
-  color: #ebeef3;
+  color: #0061f7;
   background-color: rgba(116, 51, 255, 0.1);
 }
 
@@ -2883,7 +2883,7 @@ label {
 }
 
 .top-cat-list__subtitle .primary {
-  color: #edeef6;
+  color: #2f49d1;
   background-color: rgba(47, 73, 209, 0.1);
 }
 

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardAdminComponent } from './exam-interface/components/dashboard-admin/dashboard-admin.component';
 import { ProfileComponent } from './exam-interface/components/profile/profile.component';
 import { ViewCategoriesComponent } from './exam-interface/components/view-categories/view-categories.component';
 import { AddCategoryComponent } from './exam-interface/components/add-category/add-category.component';
@@ -65,7 +64,7 @@ const routes: Routes = [
 
   // Dashbord Users
   {path:'dashbord-users', component:DashbordUsersComponent,}
-  
+
   
 
       

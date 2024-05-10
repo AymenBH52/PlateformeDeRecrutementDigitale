@@ -3,10 +3,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -24,8 +22,8 @@ import { LoadQuizComponent } from './components/User/load-quiz/load-quiz.compone
 
 @NgModule({
   declarations: [
-    NavbarComponent, 
-    DashboardAdminComponent, ProfileComponent, DashboardUserComponent, SidebarComponent,  
+   
+     ProfileComponent, DashboardUserComponent, SidebarComponent,  
     
   
     
