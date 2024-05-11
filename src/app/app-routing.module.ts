@@ -75,7 +75,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    //canActivate: [authGuard],
+    // canActivate: [authGuard],
   },
 
   // MALEKK
