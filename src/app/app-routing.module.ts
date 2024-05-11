@@ -22,7 +22,7 @@ import { LoginComponent } from './components/login/login.component';
 import { authGuard } from './globalServices/auth.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashbordUsersComponent } from './components/dashbord-users/dashbord-users.component';
-import { CvUploadComponent } from './cvs/cv-upload/cv-upload.component';
+// import { CvUploadComponent } from './components/offre/cv-upload/cv-upload.component';
 import { ListCvComponent } from './cvs/list-cv/list-cv.component';
 import { ListCvRefuseComponent } from './cvs/list-cv-refuse/list-cv-refuse.component';
 import { ListCvArchiveComponent } from './cvs/list-cv-archive/list-cv-archive.component';
@@ -56,7 +56,7 @@ const routes: Routes = [
   { path: 'add-offre', component: AddOffreComponent },
   { path: 'admin-list-offre', component: AdminListOffreComponent },
   { path: 'condidat-list-offre', component: CondidatListOffreComponent },
-  { path:'offre-details/:id',component:OffreDetailsComponent},
+  { path: 'offre-details/:id', component: OffreDetailsComponent },
 
   //New path Ayemn
   { path: 'add-category', component: AddCategoryComponent },
@@ -80,11 +80,11 @@ const routes: Routes = [
 
   // MALEKK
   { path: 'login', component: LoginComponent },
-  {
-    path: 'upload-cv',
-    component: CvUploadComponent,
-    //canActivate: [authGuard],
-  },
+  // {
+  //   path: 'upload-cv',
+  //   component: CvUploadComponent,
+  //   canActivate: [authGuard],
+  // },
 
   {
     path: 'list-cv',

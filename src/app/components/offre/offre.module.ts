@@ -8,8 +8,8 @@ import { UpdateOffreComponent } from './update-offre/update-offre.component';
 import { OffreDetailsComponent } from './offre-details/offre-details.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -18,10 +18,16 @@ import { HttpClientModule } from '@angular/common/http';
     CondidatListOffreComponent,
     UpdateOffreComponent,
     OffreDetailsComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
-    CommonModule,FormsModule ,HttpClientModule
-  ]
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    BrowserModule,
+  ],
+  providers: [],
+  exports: [],
 })
-export class OffreModule { }
+export class OffreModule {}

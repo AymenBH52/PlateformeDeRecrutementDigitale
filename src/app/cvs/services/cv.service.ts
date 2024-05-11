@@ -14,13 +14,14 @@ export class CvService {
     private storageService: LocalStorageService
   ) {}
 
-  uploadCv(file: File): Observable<any> {
+  uploadCv(file: File, id: number): Observable<any> {
     const formData = new FormData();
     formData.append('file', file);
     const user = this.storageService.getObject('user');
     if (user) {
       formData.append('userId', user.id);
     }
+    formData.append('offreId', id.toString());
 
     return this.http.post<CvModel>(`${API_BASE_URL}/upload`, formData);
   }
