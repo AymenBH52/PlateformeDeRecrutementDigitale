@@ -258,9 +258,10 @@
                     <p class="card-score text-info">
                       <strong>Offre: </strong
                       ><span
-                        ><a style="margin-right: 0.3rem" href="">{{
-                          cv.offre.nom
-                        }}</a
+                        ><a
+                          style="margin-right: 0.3rem"
+                          [href]="'/offre-details/' + cv.offre.id"
+                          >{{ cv.offre.nom }}</a
                         ><i class="bi bi-box-arrow-up-right"></i
                       ></span>
                     </p>

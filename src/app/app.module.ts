@@ -57,9 +57,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ListCvArchiveComponent } from './cvs/list-cv-archive/list-cv-archive.component';
 import { ListCvRefuseComponent } from './cvs/list-cv-refuse/list-cv-refuse.component';
-import { CvUploadComponent } from './cvs/cv-upload/cv-upload.component';
 import { ListCvComponent } from './cvs/list-cv/list-cv.component';
 import { CondidatListOffreComponent } from './components/offre/condidat-list-offre/condidat-list-offre.component';
+// import { CvUploadComponent } from './components/offre/cv-upload/cv-upload.component';
 
 @NgModule({
   declarations: [
@@ -93,9 +93,9 @@ import { CondidatListOffreComponent } from './components/offre/condidat-list-off
     DashbordUsersComponent,
     SideBarUsersComponent,
     NavbarComponent,
+
     ListCvArchiveComponent,
     ListCvRefuseComponent,
-    CvUploadComponent,
     ListCvComponent,
   ],
   imports: [
@@ -117,7 +117,6 @@ import { CondidatListOffreComponent } from './components/offre/condidat-list-off
     MatSlideToggleModule,
     MatSelectModule,
     ReactiveFormsModule,
-
     FontAwesomeModule,
     PdfViewerModule,
     // AdminSidebarComponent,
