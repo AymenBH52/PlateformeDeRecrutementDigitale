@@ -59,6 +59,7 @@ import { ListCvArchiveComponent } from './cvs/list-cv-archive/list-cv-archive.co
 import { ListCvRefuseComponent } from './cvs/list-cv-refuse/list-cv-refuse.component';
 import { CvUploadComponent } from './cvs/cv-upload/cv-upload.component';
 import { ListCvComponent } from './cvs/list-cv/list-cv.component';
+import { CondidatListOffreComponent } from './components/offre/condidat-list-offre/condidat-list-offre.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { ListCvComponent } from './cvs/list-cv/list-cv.component';
     TopBarComponent,
     ListCategorieComponent,
     AddOffreComponent,
+    CondidatListOffreComponent,
     AdminListOffreComponent,
     LoginComponent,
     TopBarComponent,

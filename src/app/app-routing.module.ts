@@ -26,6 +26,7 @@ import { CvUploadComponent } from './cvs/cv-upload/cv-upload.component';
 import { ListCvComponent } from './cvs/list-cv/list-cv.component';
 import { ListCvRefuseComponent } from './cvs/list-cv-refuse/list-cv-refuse.component';
 import { ListCvArchiveComponent } from './cvs/list-cv-archive/list-cv-archive.component';
+import { OffreDetailsComponent } from './components/offre/offre-details/offre-details.component';
 
 const routes: Routes = [
   // {path: 'dashboarAdmin', component: DashboardAdminComponent,
@@ -55,6 +56,7 @@ const routes: Routes = [
   { path: 'add-offre', component: AddOffreComponent },
   { path: 'admin-list-offre', component: AdminListOffreComponent },
   { path: 'condidat-list-offre', component: CondidatListOffreComponent },
+  { path:'offre-details/:id',component:OffreDetailsComponent},
 
   //New path Ayemn
   { path: 'add-category', component: AddCategoryComponent },
@@ -73,7 +75,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [authGuard],
+    //canActivate: [authGuard],
   },
 
   // MALEKK
@@ -81,23 +83,23 @@ const routes: Routes = [
   {
     path: 'upload-cv',
     component: CvUploadComponent,
-    canActivate: [authGuard],
+    //canActivate: [authGuard],
   },
 
   {
     path: 'list-cv',
     component: ListCvComponent,
-    canActivate: [authGuard],
+    //canActivate: [authGuard],
   },
   {
     path: 'list-cv-refuse',
     component: ListCvRefuseComponent,
-    canActivate: [authGuard],
+    //canActivate: [authGuard],
   },
   {
     path: 'list-cv-archive',
     component: ListCvArchiveComponent,
-    canActivate: [authGuard],
+    //canActivate: [authGuard],
   },
 ];
 
