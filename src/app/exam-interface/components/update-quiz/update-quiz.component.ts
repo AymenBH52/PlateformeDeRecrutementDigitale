@@ -7,41 +7,41 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-update-quiz',
   templateUrl: './update-quiz.component.html',
-  styleUrls: ['./update-quiz.component.scss']
+  styleUrls: ['./update-quiz.component.scss'],
 })
 export class UpdateQuizComponent implements OnInit {
-
   constructor(
-    private _route:ActivatedRoute,
-    private _quiz:QuizService,
-    private _cat:CategoryService,
-    private _router:Router) { }
+    private _route: ActivatedRoute,
+    private _quiz: QuizService,
+    private _cat: CategoryService,
+    private _router: Router
+  ) {}
 
   qId = 0;
   quiz: any;
-  categories=[]as any;
+  categories = [] as any;
 
   ngOnInit(): void {
     this.qId = this._route.snapshot.params['qid'];
     //alert(this.qId);
 
     this._quiz.getQuiz(this.qId).subscribe(
-      (data:any)=>{
+      (data: any) => {
         this.quiz = data;
         console.log(this.quiz);
       },
-      (error)=>{
+      (error) => {
         console.log(error);
         alert('Error in loading quiz');
       }
     );
 
     this._cat.categories().subscribe(
-      (data:any)=>{
+      (data: any) => {
         this.categories = data;
         console.log(this.categories);
       },
-      (error)=>{
+      (error) => {
         console.log(error);
         alert('Error in loading categories');
       }
@@ -49,20 +49,21 @@ export class UpdateQuizComponent implements OnInit {
   }
 
   //update quiz
-  public updateData(){
-
-    //validatate 
-    this._quiz.updateQuiz(this.quiz).subscribe((data) => {
-      Swal.fire('Success', 'Quiz updated successfully', 'success').then((e)=>{
-        this._router.navigate(['/dashboarAdmin/quizzes']);
-
-      });
-    },
-    (error)=>{
-      console.log(error);
-      Swal.fire('Error', 'Error in updating quiz', 'error');
-    });
-
-
-}
+  public updateData() {
+    //validatate
+    this._quiz.updateQuiz(this.quiz).subscribe(
+      (data) => {
+        Swal.fire('Success', 'Quiz updated successfully', 'success').then(
+          (e) => {
+            // this._router.navigate(['/dashboarAdmin/quizzes']);
+            window.location.href = '/dashboarAdmin/quizzes';
+          }
+        );
+      },
+      (error) => {
+        console.log(error);
+        Swal.fire('Error', 'Error in updating quiz', 'error');
+      }
+    );
+  }
 }

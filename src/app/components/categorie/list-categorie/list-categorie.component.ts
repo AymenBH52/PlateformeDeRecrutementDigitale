@@ -20,14 +20,12 @@ export class ListCategorieComponent implements OnInit {
     this.categorieService.getCategories().subscribe((data) => {
       this.categories = data;
       console.log(data);
-      this.router.navigate(['/list-categorie']);
+      window.location.href = '/list-categorie';
     });
   }
-  deleteCategorie(id:number){
-    this.categorieService.deleteCategorie(id).subscribe((data)=>{
-      console.log(data)
-    }
-    )
+  deleteCategorie(id: number) {
+    this.categorieService.deleteCategorie(id).subscribe((data) => {
+      console.log(data);
+    });
   }
-
 }
