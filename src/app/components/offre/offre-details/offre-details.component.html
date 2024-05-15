@@ -24,29 +24,32 @@
             </li>
           </ul>
           <div class="text-center">
-            <a
-              href="#"
+            <button
+              (click)="verifyAuth()"
               class="buy-btn"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
-              >Postuler</a
             >
+              Postuler
+            </button>
           </div>
 
           <a href="/condidat-list-offre">
-            <img
+            <!-- <img
               src="assets\img\icons8-arrière-50.png"
               style="margin-left: 20px; margin-top: 30px"
               alt="Back"
-            />
+            /> -->
+
+            <i class="bi bi-arrow-left"></i> Back
+
+            <!-- Modal -->
           </a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Modal -->
 <div
   class="modal fade"
   id="exampleModal"
@@ -57,7 +60,9 @@
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ offre.nom }}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ offre.nom }}
+        </h5>
         <button
           type="button"
           class="btn-close"
@@ -160,15 +165,15 @@
                   </div>
 
                   <!-- <div class="mt-3">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      [disabled]="!selectedFile"
-                      (click)="uploadCV()"
-                    >
-                      Postuler
-                    </button>
-                  </div> -->
+      <button
+        type="button"
+        class="btn btn-success"
+        [disabled]="!selectedFile"
+        (click)="uploadCV()"
+      >
+        Postuler
+      </button>
+    </div> -->
                 </div>
               </div>
             </div>

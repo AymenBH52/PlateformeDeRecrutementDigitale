@@ -10,6 +10,7 @@ import {
 } from '@angular/forms';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { LocalStorageService } from 'src/app/globalServices/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,11 @@ export class LoginComponent implements OnInit {
   loginErrors: string = '';
   registerErrors: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    localS: LocalStorageService
+  ) {}
 
   ngOnInit() {
     this.myLoginForm = new FormGroup({

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CategoryService } from 'src/app/exam-interface/services/category.service';
 
 @Component({
   selector: 'app-admin-sidebar',
@@ -9,7 +11,7 @@ export class AdminSidebarComponent {
   isTestsMenuOpen = false;
   isCategoriesMenuOpen = false;
   isQuizzesMenuOpen = false;
-
+  categories: any = [];
   toggleMenu(menuType: string) {
     switch (menuType) {
       case 'tests':
@@ -22,5 +24,20 @@ export class AdminSidebarComponent {
         this.isQuizzesMenuOpen = !this.isQuizzesMenuOpen;
         break;
     }
+  }
+
+  constructor(private _cat: CategoryService, private _snack: MatSnackBar) {}
+
+  ngOnInit(): void {
+    this._cat.categories().subscribe(
+      (data: any) => {
+        this.categories = data;
+      },
+      (error) => {
+        this._snack.open('Error in loading categories from server', '', {
+          duration: 3000,
+        });
+      }
+    );
   }
 }

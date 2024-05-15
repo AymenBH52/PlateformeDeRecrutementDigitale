@@ -67,11 +67,11 @@
             <span>
               <img
                 alt="test"
-                src="assets\img2\icons8-catégorie-64.png"
+                src="assets\img\ideas.png"
                 style="width: 30px; margin-right: 10px"
               />
             </span>
-            Gestion des tests
+            Quizzes
             <span class="category__btn transparent-btn" title="Open list">
               <i data-feather="chevron-down" aria-hidden="true"></i>
             </span>
@@ -160,6 +160,46 @@
             <li>
               <a href="/list-cv-archive">Archived CVs</a>
             </li>
+          </ul>
+        </li>
+
+        <!-- Gestion des candidats -->
+        <li>
+          <a class="show-cat-btn" style="cursor: pointer">
+            <span
+              ><img
+                src="assets\img\search.png"
+                style="width: 30px; margin-right: 10px" /></span
+            >Candidats
+            <span class="category__btn transparent-btn" title="Open list">
+              <i data-feather="chevron-down" aria-hidden="true"></i>
+            </span>
+          </a>
+          <ul class="cat-sub-menu">
+            <li>
+              <a href="/list-candidates">Liste candidats</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="show-cat-btn" style="cursor: pointer">
+            <span
+              ><img
+                src="assets\img\application.png"
+                style="width: 30px; margin-right: 10px" /></span
+            >Tests
+            <span class="category__btn transparent-btn" title="Open list">
+              <i data-feather="chevron-down" aria-hidden="true"></i>
+            </span>
+          </a>
+          <ul class="cat-sub-menu">
+            <li>
+              <a [routerLink]="'/dashboardUser/0'">Tout les tests</a>
+            </li>
+            <!-- <li *ngFor="let c of categories">
+              <a [routerLink]="'/dashboardUser/' + c.cid"> {{ c.title }}</a>
+            </li> -->
           </ul>
         </li>
       </ul>

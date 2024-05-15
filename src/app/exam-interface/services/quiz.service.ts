@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class QuizService {
 
-  baseUrl : string = 'http://localhost:9001';
+  baseUrl : string = 'http://localhost:8080';
 
   constructor(private _http:HttpClient ) { }
 

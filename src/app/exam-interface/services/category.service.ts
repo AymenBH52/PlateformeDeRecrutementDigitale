@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoryService {
 
-  baseUrl : string = 'http://localhost:9001';
+  baseUrl : string = 'http://localhost:8080';
 
   constructor(private _http: HttpClient) { }
 

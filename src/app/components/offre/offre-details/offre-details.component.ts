@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OffreService } from '../offre.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CvService } from 'src/app/cvs/services/cv.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LocalStorageService } from 'src/app/globalServices/local-storage.service';
@@ -14,16 +14,28 @@ import Swal from 'sweetalert2';
 })
 export class OffreDetailsComponent implements OnInit {
   offre: any = {};
+  token: any;
   constructor(
     private offreService: OffreService,
     private route: ActivatedRoute,
     private cvService: CvService,
     private localStorageService: LocalStorageService,
-    private _snack: MatSnackBar
+    private _snack: MatSnackBar,
+    private router: Router
   ) {}
   ngOnInit() {
     this.getOffreDetails();
     this.user = this.localStorageService.getObject('user') || 'USER NOT FOUND';
+    this.token = this.localStorageService.getItem('token');
+  }
+
+  verifyAuth() {
+    console.log(this.token);
+
+    if (this.token == null) {
+      // this.router.navigate(['/login']);
+      window.location.href = '/login';
+    }
   }
 
   getOffreDetails(): void {

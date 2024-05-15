@@ -59,6 +59,9 @@ import { ListCvArchiveComponent } from './cvs/list-cv-archive/list-cv-archive.co
 import { ListCvRefuseComponent } from './cvs/list-cv-refuse/list-cv-refuse.component';
 import { ListCvComponent } from './cvs/list-cv/list-cv.component';
 import { CondidatListOffreComponent } from './components/offre/condidat-list-offre/condidat-list-offre.component';
+import { MatTableModule } from '@angular/material/table';
+import { ListCandidatComponent } from './components/list-candidat/list-candidat.component';
+import { VideoComponent } from './video/enregistrer-video/video.component';
 // import { CvUploadComponent } from './components/offre/cv-upload/cv-upload.component';
 
 @NgModule({
@@ -93,10 +96,12 @@ import { CondidatListOffreComponent } from './components/offre/condidat-list-off
     DashbordUsersComponent,
     SideBarUsersComponent,
     NavbarComponent,
+    VideoComponent,
 
     ListCvArchiveComponent,
     ListCvRefuseComponent,
     ListCvComponent,
+    ListCandidatComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,6 +124,7 @@ import { CondidatListOffreComponent } from './components/offre/condidat-list-off
     ReactiveFormsModule,
     FontAwesomeModule,
     PdfViewerModule,
+    MatTableModule,
     // AdminSidebarComponent,
   ],
 

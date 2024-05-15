@@ -38,6 +38,11 @@ export class AuthService {
             this.localStorageService.addItem('token', token);
             this.localStorageService.addObject('user', user);
             window.location.href = '/dashboard';
+            if (user.userRole === 'SupAdmin') {
+              window.location.href = '/dashboard';
+            } else {
+              window.location.href = '/dashbord-users';
+            }
           } else {
             console.error('No token found in response headers');
           }
@@ -63,7 +68,7 @@ export class AuthService {
 
   logout() {
     this.localStorageService.removeManyItems(['token', 'user']);
-    this.router.navigate(['/']);
+    window.location.href = '/';
   }
 
   private triggerSubject = new Subject<string>();
