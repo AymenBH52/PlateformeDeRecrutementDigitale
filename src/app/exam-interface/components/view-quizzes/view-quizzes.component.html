@@ -11,7 +11,7 @@
   <body>
     <div class="layer"></div>
     <!-- ! Body -->
-    <a class="skip-link sr-only" href="#skip-target">Skip to content</a>
+    <a class="skip-link sr-only" routerLink="#skip-target">Skip to content</a>
     <div class="page-flex">
       <app-admin-sidebar></app-admin-sidebar>
 
@@ -39,7 +39,7 @@
 
               <mat-card-actions>
                 <a
-                  [href]="'/view-questions/' + q.qid + '/' + q.title"
+                  [routerLink]="'/view-questions/' + q.qid + '/' + q.title"
                   mat-flat-button
                   color="warn"
                 >
@@ -55,7 +55,7 @@
                 </button>
 
                 <a
-                  [href]="'/quiz/' + q.qid"
+                  [routerLink]="'/quiz/' + q.qid"
                   mat-flat-button
                   color="warn"
                   class="margin"
@@ -79,7 +79,7 @@
             </mat-card>
 
             <div class="container text-center mt20">
-              <a href="/add-quiz" mat-raised-button color="primary">
+              <a routerLink="/add-quiz" mat-raised-button color="primary">
                 Add New Quiz
               </a>
             </div>
