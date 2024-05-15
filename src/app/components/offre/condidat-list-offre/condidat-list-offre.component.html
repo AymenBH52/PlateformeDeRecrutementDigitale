@@ -33,33 +33,31 @@ overflow: hidden;
 </div>                
             
 </body> -->
-<!-- <app-navbar></app-navbar> -->
-    <section id="services" class="services sections-bg" style="margin-top: 50px;">
-      <div class="container" data-aos="fade-up">
+<app-navbar></app-navbar>
+<section id="services" class="services sections-bg" style="margin-top: 50px">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Offres</h2>
+      <p>
+        Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro
+        incidunt dolores placeat sunt id nobis omnis tiledo stran delop
+      </p>
+    </div>
 
-        <div class="section-header">
-          <h2>Offres</h2>
-          <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
-        </div>
-
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-4 col-md-6" *ngFor="let o of offres">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
-              </div>
-              <h3>{{o.nom}}</h3>
-              <p>{{o.description}}</p>
-              
-              <a  class="readmore stretched-link" (click)="gotToDisplaytOffre(o.id)">Détails<i class="bi bi-arrow-right" ></i></a>
-            </div>
+    <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-4 col-md-6" *ngFor="let o of offres">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-calendar4-week"></i>
           </div>
+          <h3>{{ o.nom }}</h3>
+          <p>{{ o.description }}</p>
 
-         
-
+          <a class="readmore stretched-link" (click)="gotToDisplaytOffre(o.id)"
+            >Détails<i class="bi bi-arrow-right"></i
+          ></a>
         </div>
-
       </div>
-    </section>
-    
-  
+    </div>
+  </div>
+</section>
