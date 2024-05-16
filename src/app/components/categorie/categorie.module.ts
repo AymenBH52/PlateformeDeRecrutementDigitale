@@ -8,11 +8,8 @@ import { UpdateCategorieComponent } from './update-categorie/update-categorie.co
   declarations: [
     AddCategorieComponent,
     ListCategorieComponent,
-    UpdateCategorieComponent
+    UpdateCategorieComponent,
   ],
-  imports: [
-    CommonModule,
-    
-  ]
+  imports: [CommonModule],
 })
 export class CategorieModule {}

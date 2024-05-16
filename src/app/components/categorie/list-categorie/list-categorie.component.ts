@@ -18,9 +18,8 @@ export class ListCategorieComponent implements OnInit {
   }
   getAllCategories() {
     this.categorieService.getCategories().subscribe((data) => {
-      this.categories = data;
       console.log(data);
-      window.location.href = '/list-categorie';
+      this.categories = data;
     });
   }
   deleteCategorie(id: number) {
